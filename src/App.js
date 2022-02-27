@@ -93,13 +93,25 @@ function App() {
             <Tabs variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>SOCIAL</Tab>
-                <Tab>Twitter</Tab>
                 <Tab>Anon Chat</Tab>
+                <Tab>Twitter</Tab>
                 <Tab>Discord</Tab>
                 <Tab>Public Video Chat</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
+                <TabPanel>
+                  <iframe
+                    title="Anon Chat"
+                    src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
+                      Math.random() * 12303123
+                    )}&channels=#bunkerhud`}
+                    width="100%"
+                    height={window.innerHeight / 2 - 85}
+                    allowtransparency="true"
+                    frameBorder="0"
+                  />
+                </TabPanel>
                 <TabPanel>
                   <SimpleGrid columns={[2]} spacing="40px">
                     <Box w="30%">
@@ -135,18 +147,7 @@ function App() {
                     </Box>
                   </SimpleGrid>
                 </TabPanel>
-                <TabPanel>
-                  <iframe
-                    title="Anon Chat"
-                    src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
-                      Math.random() * 12303123
-                    )}&channels=#bunkerhud`}
-                    width="100%"
-                    height={window.innerHeight / 2 - 85}
-                    allowtransparency="true"
-                    frameBorder="0"
-                  />
-                </TabPanel>
+
                 <TabPanel>
                   <Link href="" isExternal>
                     should we make a{' '}
