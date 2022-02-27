@@ -91,9 +91,11 @@ function App() {
           <Box height="44vh">
             <Tabs isLazy variant="enclosed" defaultIndex={1}>
               <TabList>
-                <Tab isDisabled>Social Feeds</Tab>
+                <Tab isDisabled>SOCIAL</Tab>
                 <Tab>Twitter</Tab>
                 <Tab>Anon Chat</Tab>
+                <Tab>Discord</Tab>
+                <Tab>Public Video Chat</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
@@ -115,8 +117,8 @@ function App() {
                             borderRadius="md"
                             bg={
                               activeTwitter === name
-                                ? `rgb(${UE[0]})`
-                                : `rgb(${UE[1]})`
+                                ? `rgb(${UE[1]})`
+                                : `rgb(${UE[0]})`
                             }
                             px={4}
                             h={8}
@@ -131,6 +133,42 @@ function App() {
                       <Timeline activeTwitter={activeTwitter} text={text} />
                     </Box>
                   </SimpleGrid>
+                </TabPanel>
+                <TabPanel>
+                  <iframe
+                    title="Anon Chat"
+                    src="https://web.libera.chat/gamja/?channels=#bunkerhud"
+                    width="100%"
+                    height={window.innerHeight / 2 - 85}
+                    allowtransparency="true"
+                    frameBorder="0"
+                  />
+                </TabPanel>
+                <TabPanel>
+                  <Link href="" isExternal>
+                    should we make a{' '}
+                    <Text
+                      as="span"
+                      fontSize="lg"
+                      fontWeight="bold"
+                      color="current"
+                      display="inline-block"
+                      mr={2}
+                    >
+                      Discord? <ExternalLinkIcon />
+                    </Text>
+                  </Link>
+                </TabPanel>
+                <TabPanel>
+                  <iframe
+                    allow="camera; microphone; display-capture"
+                    src="https://meet.jit.si/bunker"
+                    allowfullscreen="true"
+                    style={{
+                      width: 100 + '%',
+                      height: window.innerHeight / 2 - 85,
+                    }}
+                  ></iframe>
                 </TabPanel>
               </TabPanels>
             </Tabs>
@@ -237,7 +275,8 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        please let me know on twitter.
+                        {' '}
+                        please let me know.
                       </Link>
                     </p>
                   </Text>
