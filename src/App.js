@@ -225,6 +225,8 @@ function App() {
               <TabPanels>
                 <TabPanel></TabPanel>
                 <TabPanel></TabPanel>
+                <TabPanel></TabPanel>
+
                 <TabPanel m={4}>
                   <Text>
                     <ol>
@@ -261,7 +263,6 @@ function App() {
                     </ol>
                   </Text>
                 </TabPanel>
-                <TabPanel></TabPanel>
 
                 <TabPanel m={4}>
                   <Text>
