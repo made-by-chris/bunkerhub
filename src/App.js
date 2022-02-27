@@ -215,13 +215,14 @@ function App() {
             <Tabs isLazy variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>RESOURCES</Tab>
-                <Tab>Live News Pages</Tab>
-                <Tab>Real-time Airspace Map</Tab>
+                <Tab>Airspace Map</Tab>
                 <Tab>Other Maps</Tab>
+                <Tab>Live News Pages</Tab>
                 <Tab>DONATE</Tab>
                 <Tab>About</Tab>
               </TabList>
               <TabPanels>
+                <TabPanel></TabPanel>
                 <TabPanel></TabPanel>
                 <TabPanel m={4}>
                   <Text>
@@ -259,7 +260,6 @@ function App() {
                     </ol>
                   </Text>
                 </TabPanel>
-                <TabPanel></TabPanel>
                 <TabPanel></TabPanel>
 
                 <TabPanel m={4}>
