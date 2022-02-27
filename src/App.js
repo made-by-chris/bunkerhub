@@ -1,5 +1,7 @@
 import Nav from './Nav';
+
 import React from 'react';
+
 import {
   ChakraProvider,
   Box,
@@ -28,9 +30,6 @@ const opts = {
 };
 
 function Timeline({ activeTwitter, text }) {
-  useEffect(() => {
-    console.log('stuff changed', activeTwitter, text);
-  }, [activeTwitter, text]);
   return (
     <TwitterTimelineEmbed
       flex="2"
@@ -46,19 +45,20 @@ function Timeline({ activeTwitter, text }) {
     />
   );
 }
-
 function App() {
   const text = useColorModeValue('dark', 'light');
   const [activeTwitter, setActiveTwitter] = useState('ZelenskyyUa');
   const [turnOnVideoCall, setTurnOnVideoCall] = useState(false);
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={{...theme, components: {...theme.components, Button: { baseStyle: { _focus: { boxShadow: 'none' } } }}}}>
+      <Nav />
+
       <Box
         as="main"
         maxW="screen-xl"
         mx="auto"
-        px={4}
-        py={4}
+        px={2}
+        py={2}
         fontSize="lg"
         fontFamily="mono"
       >
@@ -124,6 +124,7 @@ function App() {
                       ].map(name => {
                         return (
                           <Box
+                            key={name}
                             flex="0"
                             as="button"
                             onClick={() => setActiveTwitter(name)}
@@ -267,7 +268,7 @@ function App() {
                     <ol>
                       <li>
                         <Link
-                          href="https://twitter.com/olex_scherba/status/1497601344206557184"
+                          href="https://twitter.com/Ukraine/status/1497594592438497282"
                           isExternal
                         >
                           Official crypto wallets of ukraine BTC -
@@ -305,7 +306,6 @@ function App() {
           </Box>
         </SimpleGrid>
       </Box>
-      <Nav />
     </ChakraProvider>
   );
 }
