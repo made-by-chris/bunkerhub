@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.5",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -14,7 +15,9 @@
     "react-dom": "^17.0.2",
     "react-icons": "^3.11.0",
     "react-scripts": "5.0.0",
+    "react-twitter-embed": "^4.0.4",
     "react-twitter-widgets": "^1.10.0",
+    "react-youtube": "^7.14.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
