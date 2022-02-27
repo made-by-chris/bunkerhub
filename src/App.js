@@ -50,6 +50,7 @@ function Timeline({ activeTwitter, text }) {
 function App() {
   const text = useColorModeValue('dark', 'light');
   const [activeTwitter, setActiveTwitter] = useState('ZelenskyyUa');
+  const [turnOnVideoCall, setTurnOnVideoCall] = useState(false);
   return (
     <ChakraProvider theme={theme}>
       <Box
@@ -89,7 +90,7 @@ function App() {
             </Tabs>
           </Box>
           <Box height="44vh">
-            <Tabs isLazy variant="enclosed" defaultIndex={1}>
+            <Tabs variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>SOCIAL</Tab>
                 <Tab>Twitter</Tab>
@@ -137,7 +138,9 @@ function App() {
                 <TabPanel>
                   <iframe
                     title="Anon Chat"
-                    src="https://web.libera.chat/gamja/?channels=#bunkerhud"
+                    src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
+                      Math.random() * 12303123
+                    )}&channels=#bunkerhud`}
                     width="100%"
                     height={window.innerHeight / 2 - 85}
                     allowtransparency="true"
@@ -160,15 +163,30 @@ function App() {
                   </Link>
                 </TabPanel>
                 <TabPanel>
-                  <iframe
-                    allow="camera; microphone; display-capture"
-                    src="https://meet.jit.si/bunker"
-                    allowfullscreen="true"
-                    style={{
-                      width: 100 + '%',
-                      height: window.innerHeight / 2 - 85,
-                    }}
-                  ></iframe>
+                  {turnOnVideoCall ? (
+                    <iframe
+                      allow="camera; microphone; display-capture"
+                      src="https://meet.jit.si/bunker"
+                      allowfullscreen="true"
+                      style={{
+                        width: 100 + '%',
+                        height: window.innerHeight / 2 - 85,
+                      }}
+                    ></iframe>
+                  ) : (
+                    <Box
+                      flex="1"
+                      as="button"
+                      onClick={() => setTurnOnVideoCall(true)}
+                      borderRadius="md"
+                      bg={`rgb(${UE[0]})`}
+                      px={4}
+                      h={8}
+                      mb={2}
+                    >
+                      Turn on video call
+                    </Box>
+                  )}
                 </TabPanel>
               </TabPanels>
             </Tabs>
