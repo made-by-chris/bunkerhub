@@ -85,6 +85,8 @@ function App() {
                 <Tab>DW</Tab>
                 <Tab>Al Jazeera</Tab>
                 <Tab>UN</Tab>
+                <Tab>euronews</Tab>
+                <Tab>reuters</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
@@ -99,6 +101,12 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                   <YouTube videoId="9CdY7t5VKIY" opts={opts} />
+                </TabPanel>
+                <TabPanel>
+                  <YouTube videoId="izGSmX0deT8" opts={opts} />
+                </TabPanel>
+                <TabPanel>
+                  <YouTube videoId="wEuwZoDsJ_M" opts={opts} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
