@@ -112,6 +112,24 @@ function App() {
             </Tabs>
           </Box>
           <Box height="44vh">
+            <Tabs isLazy variant="enclosed" defaultIndex={1}>
+              <TabList>
+                <Tab isDisabled>WEBCAM</Tab>
+                <Tab>Politischios.gr</Tab>
+                <Tab>Live Moments</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel></TabPanel>
+                <TabPanel>
+                  <YouTube videoId="HIPNVm6lNfM" opts={opts} />
+                </TabPanel>
+                <TabPanel>
+                  <YouTube videoId="lf-EEnsxZXo" opts={opts} />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
+          <Box height="44vh">
             <Tabs variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>SOCIAL</Tab>
@@ -203,24 +221,6 @@ function App() {
                       Turn on video call
                     </Box>
                   )}
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
-          </Box>
-          <Box height="44vh">
-            <Tabs isLazy variant="enclosed" defaultIndex={1}>
-              <TabList>
-                <Tab isDisabled>WEBCAM</Tab>
-                <Tab>Politischios.gr</Tab>
-                <Tab>Live Moments</Tab>
-              </TabList>
-              <TabPanels>
-                <TabPanel></TabPanel>
-                <TabPanel>
-                  <YouTube videoId="HIPNVm6lNfM" opts={opts} />
-                </TabPanel>
-                <TabPanel>
-                  <YouTube videoId="lf-EEnsxZXo" opts={opts} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
