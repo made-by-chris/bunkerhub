@@ -295,15 +295,15 @@ function App() {
                       my own convenience, so I don't have to keep track of so
                       many websites.
                     </p>
+                    <br />
                     <p>
                       If you would like to provide video/news/help resources for
-                      a different language,
+                      a different language,{' '}
                       <Link
                         href="https://twitter.com/The_Botschaft"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {' '}
                         please let me know.
                       </Link>
                     </p>
