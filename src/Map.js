@@ -3163,7 +3163,7 @@ export default ({ tileLayerThemes, text }) => {
             iconAnchor={[-5, -5]}
           >
             <Popup>
-              {v[0]} {v[1]} {v[2]}
+              flight {v[0]} {v[1]} from {v[2]}
             </Popup>
           </Marker>
         );
