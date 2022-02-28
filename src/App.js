@@ -251,6 +251,16 @@ function App() {
                     <ol>
                       <li>
                         <Link
+                          href="https://nuclearadvice.org/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          https://nuclearadvice.org/
+                          <ExternalLinkIcon mx="2px" />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
                           href="https://www.reddit.com/live/18hnzysb1elcs"
                           target="_blank"
                           rel="noopener noreferrer"
