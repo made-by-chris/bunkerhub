@@ -233,7 +233,9 @@ function App() {
                     <Map tileLayerThemes={tileLayerThemes} text={text} />
                   </Box>
                 </TabPanel>
-                <TabPanel></TabPanel>
+                <TabPanel>
+                  <Timeline activeTwitter={'#bunkerhud_map'} text={text} />
+                </TabPanel>
                 <TabPanel m={4}>
                   <Text>
                     <ol>
