@@ -1,7 +1,11 @@
 import React from 'react';
 import { useColorMode, useColorModeValue, IconButton } from '@chakra-ui/react';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import "./ColorModeSwitcher.css"
+import './ColorModeSwitcher.css';
+
+let prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+console.log({ prefersDark });
+
 export const ColorModeSwitcher = props => {
   const { toggleColorMode } = useColorMode();
   const text = useColorModeValue('dark', 'light');

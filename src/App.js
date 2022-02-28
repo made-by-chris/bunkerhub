@@ -1,7 +1,7 @@
 import Nav from './Nav';
 
-import "./styles.css"
-import Map from "./Map"
+import './styles.css';
+import Map from './Map';
 import {
   Box,
   ChakraProvider,
@@ -19,11 +19,13 @@ import {
 import YouTube from 'react-youtube';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Chat from './Chat';
+
 const tileLayerThemes = {
-  "light": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png", 
-  "dark" : "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-}
+  light: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
+  dark: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+};
 const UE = ['0, 87, 183', '255, 215, 0'];
 
 const opts = {
@@ -52,8 +54,16 @@ function App() {
   const text = useColorModeValue('dark', 'light');
   const [activeTwitter, setActiveTwitter] = useState('ZelenskyyUa');
   const [turnOnVideoCall, setTurnOnVideoCall] = useState(false);
-  return (  
-  <ChakraProvider theme={{...theme, components: {...theme.components, Button: { baseStyle: { _focus: { boxShadow: 'none' } } }}}}>  
+  return (
+    <ChakraProvider
+      theme={{
+        ...theme,
+        components: {
+          ...theme.components,
+          Button: { baseStyle: { _focus: { boxShadow: 'none' } } },
+        },
+      }}
+    >
       <Nav />
 
       <Box
@@ -96,24 +106,15 @@ function App() {
             <Tabs variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>SOCIAL</Tab>
-                <Tab>Anon Chat</Tab>
+                <Tab>Chat</Tab>
                 <Tab>Twitter</Tab>
                 <Tab>Discord</Tab>
-                <Tab>Public Video Chat</Tab>
+                <Tab>Video Chat</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
                 <TabPanel>
-                  <iframe
-                    title="Anon Chat"
-                    src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
-                      Math.random() * 12303123
-                    )}&channels=#bunkerhud`}
-                    width="100%"
-                    height={window.innerHeight / 2 - 85}
-                    allowtransparency="true"
-                    frameBorder="0"
-                  />
+                  <Chat />
                 </TabPanel>
                 <TabPanel>
                   <SimpleGrid columns={[2]} spacing="40px">
@@ -221,16 +222,16 @@ function App() {
                 <Tab isDisabled>RESOURCES</Tab>
                 <Tab>Airspace</Tab>
                 <Tab>Maps</Tab>
-                <Tab>Live Pages</Tab>
+                <Tab>Feeds</Tab>
                 <Tab>DONATE</Tab>
                 <Tab>About</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
                 <TabPanel>
-                <Box h={{height:"44vh"}}>
-                  <Map tileLayerThemes={tileLayerThemes} text={text}/>
-                </Box>
+                  <Box h={{ height: '40vh' }}>
+                    <Map tileLayerThemes={tileLayerThemes} text={text} />
+                  </Box>
                 </TabPanel>
                 <TabPanel></TabPanel>
                 <TabPanel m={4}>
@@ -312,9 +313,9 @@ function App() {
             </Tabs>
           </Box>
         </SimpleGrid>
-      </Box> 
+      </Box>
     </ChakraProvider>
-  )
+  );
 }
 
 export default App;
