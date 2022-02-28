@@ -10,8 +10,8 @@ export default function Chat() {
   }, []);
 
   return (
-    <h1>anon chat coming soon :) </h1>
-    // <iframe
+    // // <h1>anon chat coming soon :) </h1>
+    // // <iframe
     //   id="ircChat"
     //   title="Chat"
     //   src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
@@ -21,6 +21,17 @@ export default function Chat() {
     //   height={window.innerHeight / 2 - 85}
     //   allowtransparency="true"
     //   frameBorder="0"
-    // />
+    // // />
+    <iframe
+      id="ircChat"
+      title="Chat"
+      width="100%"
+      height={window.innerHeight / 2 - 85}
+      allowtransparency="true"
+      frameBorder="0"
+      src={`https://thelounge.hybridirc.com/?theme=morning&join=bunkerhub&nick=anon-user-${Math.floor(
+        Math.random() * 12303123
+      )}`}
+    />
   );
 }

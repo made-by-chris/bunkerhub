@@ -3122,7 +3122,7 @@ export default ({ tileLayerThemes, text }) => {
 
     const vectorInterval = setInterval(() => {
       getVectors();
-    }, 10000);
+    }, 20000);
     getVectors();
     return () => clearInterval(vectorInterval);
   }, []);
