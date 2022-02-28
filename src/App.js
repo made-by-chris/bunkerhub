@@ -155,8 +155,7 @@ function App() {
                 </TabPanel>
 
                 <TabPanel>
-                  <Link href="" isExternal>
-                    should we make a{' '}
+                  <Link href="https://discord.gg/FXtKq9kE" isExternal>
                     <Text
                       as="span"
                       fontSize="lg"
@@ -165,7 +164,9 @@ function App() {
                       display="inline-block"
                       mr={2}
                     >
-                      Discord? <ExternalLinkIcon />
+                      Join the Embassy Discord ( #bunker channel )
+                      https://discord.gg/FXtKq9kE
+                      <ExternalLinkIcon />
                     </Text>
                   </Link>
                 </TabPanel>
