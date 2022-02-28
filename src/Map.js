@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
@@ -26,7 +26,7 @@ export default ({ tileLayerThemes, text }) => {
       'https://raw.githubusercontent.com/EugeneBorshch/ukraine_geojson/master/Ukraine.json'
     )
       .then(res => res.json())
-      .then(res => console.log(res));
+      .then(res => setUkraine_geojson(res));
 
     const vectorInterval = setInterval(() => {
       getVectors();
@@ -48,7 +48,7 @@ export default ({ tileLayerThemes, text }) => {
     shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
   });
   return (
-    <MapContainer center={[50.450001, 30.523333]} zoom={5}>
+    <MapContainer center={[48.450001, 31.523333]} zoom={5}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url={tileLayerThemes[text]}
@@ -71,7 +71,9 @@ export default ({ tileLayerThemes, text }) => {
       <Marker position={[50.450001, 30.523333]} icon={icon}>
         <Popup>KYIV</Popup>
       </Marker>
-      {ukraine_geojson && <GeoJSON attribution="qwe" data={ukraine_geojson} />}
+      {ukraine_geojson.features && (
+        <GeoJSON attribution="qwe" data={ukraine_geojson.features} />
+      )}
     </MapContainer>
   );
 };
