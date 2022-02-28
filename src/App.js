@@ -1,26 +1,29 @@
 import Nav from './Nav';
 
-import React from 'react';
-
+import "./styles.css"
+import Map from "./Map"
 import {
-  ChakraProvider,
   Box,
-  theme,
+  ChakraProvider,
   SimpleGrid,
   Tabs,
   TabList,
   TabPanels,
-  Tab,
   TabPanel,
+  Tab,
   Link,
   Text,
+  theme,
   useColorModeValue,
 } from '@chakra-ui/react';
 import YouTube from 'react-youtube';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { useState, useEffect } from 'react';
-
+const tileLayerThemes = {
+  "light": "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png", 
+  "dark" : "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+}
 const UE = ['0, 87, 183', '255, 215, 0'];
 
 const opts = {
@@ -49,8 +52,8 @@ function App() {
   const text = useColorModeValue('dark', 'light');
   const [activeTwitter, setActiveTwitter] = useState('ZelenskyyUa');
   const [turnOnVideoCall, setTurnOnVideoCall] = useState(false);
-  return (
-    <ChakraProvider theme={{...theme, components: {...theme.components, Button: { baseStyle: { _focus: { boxShadow: 'none' } } }}}}>
+  return (  
+  <ChakraProvider theme={{...theme, components: {...theme.components, Button: { baseStyle: { _focus: { boxShadow: 'none' } } }}}}>  
       <Nav />
 
       <Box
@@ -68,9 +71,9 @@ function App() {
               <TabList>
                 <Tab isDisabled>LIVE VIDEO NEWS</Tab>
                 <Tab>Sky</Tab>
-                <Tab>Deutsche Welle</Tab>
+                <Tab>DW</Tab>
                 <Tab>Al Jazeera</Tab>
-                <Tab>United Nations</Tab>
+                <Tab>UN</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
@@ -216,17 +219,20 @@ function App() {
             <Tabs isLazy variant="enclosed" defaultIndex={1}>
               <TabList>
                 <Tab isDisabled>RESOURCES</Tab>
-                <Tab>Airspace Map</Tab>
-                <Tab>Other Maps</Tab>
-                <Tab>Live News Pages</Tab>
+                <Tab>Airspace</Tab>
+                <Tab>Maps</Tab>
+                <Tab>Live Pages</Tab>
                 <Tab>DONATE</Tab>
                 <Tab>About</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
+                <TabPanel>
+                <Box h={{height:"44vh"}}>
+                  <Map tileLayerThemes={tileLayerThemes} text={text}/>
+                </Box>
+                </TabPanel>
                 <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-
                 <TabPanel m={4}>
                   <Text>
                     <ol>
@@ -306,9 +312,9 @@ function App() {
             </Tabs>
           </Box>
         </SimpleGrid>
-      </Box>
+      </Box> 
     </ChakraProvider>
-  );
+  )
 }
 
 export default App;
