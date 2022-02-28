@@ -4,5 +4,5 @@
   height: 39.5vh;
 }
 .leaflet-tile {
-  filter: brightness(60%) invert(90%) !important;
+  filter: brightness(90%) invert(100%) grayscale(90%) !important;
 }
