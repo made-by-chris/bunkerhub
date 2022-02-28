@@ -29,7 +29,7 @@ export default function Chat() {
       height={window.innerHeight / 2 - 85}
       allowtransparency="true"
       frameBorder="0"
-      src={`https://thelounge.hybridirc.com/?theme=morning&join=bunkerhub&nick=anon-user-${Math.floor(
+      src={`https://thelounge.hybridirc.com/?theme=morning&join=bunkerhub&nick=ambassador-${Math.floor(
         Math.random() * 12303123
       )}`}
     />
