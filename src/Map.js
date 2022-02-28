@@ -3151,7 +3151,7 @@ export default ({ tileLayerThemes, text }) => {
     <MapContainer center={[48.450001, 31.523333]} zoom={5}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url={tileLayerThemes[text]}
+        url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
       />
       {vectors.map(v => {
         return (
