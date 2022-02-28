@@ -35,17 +35,25 @@ export default ({ tileLayerThemes, text }) => {
     return () => clearInterval(vectorInterval);
   }, []);
 
-  const externalVectorIcon = L.icon({
+  const plane = L.icon({
     iconUrl: require('./plane.png'),
     iconRetinaUrl: require('./plane.png'),
     iconSize: [25, 25],
     iconAnchor: [25, 25],
     popupAnchor: [10, 10],
   });
+  const ruplane = L.icon({
+    iconUrl: require('./RUplane.png'),
+    iconRetinaUrl: require('./RUplane.png'),
+    iconSize: [25, 25],
+    iconAnchor: [25, 25],
+    popupAnchor: [10, 10],
+  });
   let icon = L.icon({
-    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-    iconUrl: require('leaflet/dist/images/marker-icon.png'),
-    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    iconRetinaUrl: require('./point.png'),
+    iconUrl: require('./point.png'),
+    iconSize: [25, 25],
+    iconAnchor: [12, 12],
   });
   return (
     <MapContainer center={[48.450001, 31.523333]} zoom={5}>
@@ -58,7 +66,7 @@ export default ({ tileLayerThemes, text }) => {
           <Marker
             key={v[0]}
             position={[v[6], v[5]]}
-            icon={externalVectorIcon}
+            icon={v[2] === 'Russian Federation' ? ruplane : plane}
             rotationAngle={v[9]}
             iconAnchor={[-5, -5]}
           >
