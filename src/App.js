@@ -21,6 +21,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { useState } from 'react';
 import Chat from './Chat';
+import { TwitterHashtagButton } from 'react-twitter-embed';
 
 const tileLayerThemes = {
   light: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
@@ -309,6 +310,16 @@ function App() {
                         please let me know.
                       </Link>
                     </p>
+                    <br />
+                    share bunkerhub!
+                    <TwitterHashtagButton
+                      tag="bunkerhub"
+                      text="#bunkerhub"
+                      options={{
+                        text: 'useful #ukraine invasion real-time dashboard https://bunkerhub.netlify.app/ ',
+                        via: 'The_Botschaft',
+                      }}
+                    />
                   </Text>
                 </TabPanel>
               </TabPanels>

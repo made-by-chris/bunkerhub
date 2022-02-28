@@ -15,7 +15,7 @@ export default function Chat() {
       title="Chat"
       src={`https://web.libera.chat/gamja/?nick=anon-user-${Math.floor(
         Math.random() * 12303123
-      )}&channels=#bunkerhud`}
+      )}&channels=#bunkerhub`}
       width="100%"
       height={window.innerHeight / 2 - 85}
       allowtransparency="true"
