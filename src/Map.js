@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
 import RotatedMarker from './RotatedMarker.js';
 
-const b = 20;
+const b = 30;
 export default ({ tileLayerThemes, text }) => {
   const [vectors, setVectors] = useState([]);
   const [ukraine_geojson, setUkraine_geojson] = useState({});
@@ -70,6 +70,9 @@ export default ({ tileLayerThemes, text }) => {
       })}
       <Marker position={[50.450001, 30.523333]} icon={icon}>
         <Popup>KYIV</Popup>
+      </Marker>
+      <Marker position={[55.7558, 37.6173]} icon={icon}>
+        <Popup>MOSCOW</Popup>
       </Marker>
       {ukraine_geojson.features && (
         <GeoJSON attribution="qwe" data={ukraine_geojson.features} />
