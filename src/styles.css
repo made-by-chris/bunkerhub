@@ -3,3 +3,6 @@
   padding: 0;
   height: 39.5vh;
 }
+.leaflet-tile {
+  filter: brightness(60%) invert(90%) !important;
+}
