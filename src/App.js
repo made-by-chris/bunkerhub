@@ -116,6 +116,7 @@ function App() {
               <TabList>
                 <Tab isDisabled>WEBCAM</Tab>
                 <Tab>Politischios.gr</Tab>
+                <Tab>NEMICO NETWORK</Tab>
                 <Tab>Fox News LiveShot</Tab>
                 <Tab>Same WaveLength</Tab>
                 <Tab>Audionix</Tab>
@@ -124,6 +125,9 @@ function App() {
                 <TabPanel></TabPanel>
                 <TabPanel>
                   <YouTube videoId="HIPNVm6lNfM" opts={opts} />
+                </TabPanel>
+                <TabPanel>
+                  <YouTube videoId="yWnl9PD_dIg" opts={opts} />
                 </TabPanel>
                 <TabPanel>
                   <YouTube videoId="5e-FSBVHv8g" opts={opts} />
