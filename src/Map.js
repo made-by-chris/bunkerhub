@@ -42,10 +42,10 @@ export default () => {
     oligarchs: true,
     UA: true,
     RU: true,
-    US: true,
-    GB: true,
-    FR: true,
-    DE: true,
+    US: false,
+    GB: false,
+    FR: false,
+    DE: false,
   });
 
   const getVectors = () => {
