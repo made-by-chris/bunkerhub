@@ -116,7 +116,6 @@ function App() {
               <TabList>
                 <Tab isDisabled>WEBCAM</Tab>
                 <Tab>Politischios.gr</Tab>
-                <Tab>Live Moments</Tab>
                 <Tab>Fox News LiveShot</Tab>
                 <Tab>Same WaveLength</Tab>
                 <Tab>Audionix</Tab>
@@ -125,9 +124,6 @@ function App() {
                 <TabPanel></TabPanel>
                 <TabPanel>
                   <YouTube videoId="HIPNVm6lNfM" opts={opts} />
-                </TabPanel>
-                <TabPanel>
-                  <YouTube videoId="lf-EEnsxZXo" opts={opts} />
                 </TabPanel>
                 <TabPanel>
                   <YouTube videoId="5e-FSBVHv8g" opts={opts} />
@@ -263,12 +259,6 @@ function App() {
                   </Box>
                 </TabPanel>
                 <TabPanel>
-                  <h1></h1>
-
-                  <br />
-                  <br />
-                  <h1></h1>
-
                   <ol>
                     <li>
                       <Link
@@ -302,7 +292,7 @@ function App() {
                     </li>
                     <li>
                       <Link
-                        href="understandingwar.org"
+                        href="https://understandingwar.org"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

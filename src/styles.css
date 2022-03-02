@@ -3,8 +3,17 @@
   padding: 0;
   height: 39.5vh;
 }
-.map-button {
+.map-buttons {
+  position: absolute;
   z-index: 99999999;
+  margin-left: 60px;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+span {
+  color: black;
 }
 .leaflet-tile {
   filter: brightness(90%) invert(100%) grayscale(90%) !important;

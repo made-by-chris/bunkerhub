@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import RotatedMarker from './RotatedMarker.js';
 import oligarchs from './oligarchs.json';
 import geojson from './geojson.json';
+import { Switch } from '@chakra-ui/react';
 const b = 30;
 
 const reverseIndex = {};
@@ -18,6 +19,13 @@ Object.keys(oligarchs).forEach(oligarch => {
 export default ({ tileLayerThemes, text }) => {
   const [vectors, setVectors] = useState([]);
   const [ukraine_geojson, setUkraine_geojson] = useState(geojson);
+  const [info, setInfo] = useState({
+    all: true,
+    oligarchs: true,
+    ukraine: true,
+    russia: true,
+    cities: true,
+  });
 
   const getVectors = () => {
     fetch(
@@ -38,10 +46,10 @@ export default ({ tileLayerThemes, text }) => {
   }, []);
 
   const plane = L.icon({
-    iconUrl: require('./plane.png'),
-    iconRetinaUrl: require('./plane.png'),
-    iconSize: [25, 25],
-    iconAnchor: [25, 25],
+    iconUrl: require('./UAplane.png'),
+    iconRetinaUrl: require('./UAplane.png'),
+    iconSize: [15, 15],
+    iconAnchor: [15, 15],
     popupAnchor: [10, 10],
   });
   const ruplane = L.icon({
@@ -52,8 +60,8 @@ export default ({ tileLayerThemes, text }) => {
     popupAnchor: [10, 10],
   });
   const uaplane = L.icon({
-    iconUrl: require('./UAplane.png'),
-    iconRetinaUrl: require('./UAplane.png'),
+    iconUrl: require('./plane.png'),
+    iconRetinaUrl: require('./plane.png'),
     iconSize: [25, 25],
     iconAnchor: [25, 25],
     popupAnchor: [10, 10],
@@ -73,8 +81,18 @@ export default ({ tileLayerThemes, text }) => {
   });
   return (
     <>
-      <nav>
-        <button className="map-button">test</button>
+      <nav className="map-buttons">
+        {' '}
+        <span>all</span>{' '}
+        <Switch value={info.all} colorScheme="light" size="lg" />{' '}
+        <span>oligarchs</span>{' '}
+        <Switch value={info.oligarchs} colorScheme="red" size="lg" />{' '}
+        <span>UA</span>{' '}
+        <Switch value={info.ukraine} colorScheme="yellow" size="lg" />{' '}
+        <span>RU</span>{' '}
+        <Switch value={info.russia} colorScheme="red" size="lg" />{' '}
+        <span>cities</span>{' '}
+        <Switch value={info.cities} colorScheme="yellow" size="lg" />
       </nav>
       <MapContainer center={[48.450001, 31.523333]} zoom={5}>
         <TileLayer
