@@ -119,6 +119,7 @@ function App() {
                 <Tab>Live Moments</Tab>
                 <Tab>Fox News LiveShot</Tab>
                 <Tab>Same WaveLength</Tab>
+                <Tab>Audionix</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel></TabPanel>
@@ -133,6 +134,9 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                   <YouTube videoId="iduTRpucfok" opts={opts} />
+                </TabPanel>
+                <TabPanel>
+                  <YouTube videoId="TTmXA1ildFc" opts={opts} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
@@ -153,19 +157,26 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                   <SimpleGrid columns={[2]} spacing="40px">
-                    <Box w="30%">
+                    <Box w="80%">
                       {[
                         'ZelenskyyUa',
                         'vonderleyen',
                         'KyivIndependent',
                         'Tsihanouskaya',
                         'EuromaidanPress',
+                        'Andrew__Roth',
+                        'PjotrSauer',
+                        'ASLuhn',
+                        'BBCWillVernon',
+                        'BBCSteveR',
+                        'RUOligarchJets',
                       ].map(name => {
                         return (
                           <Box
                             key={name}
                             flex="0"
                             as="button"
+                            m={1}
                             onClick={() => setActiveTwitter(name)}
                             borderRadius="md"
                             bg={
@@ -239,7 +250,7 @@ function App() {
               <TabList>
                 <Tab isDisabled>RESOURCES</Tab>
                 <Tab>Airspace</Tab>
-                <Tab>Maps</Tab>
+                <Tab>Data and Links</Tab>
                 <Tab>Feeds</Tab>
                 <Tab>DONATE</Tab>
                 <Tab>About</Tab>
@@ -252,21 +263,69 @@ function App() {
                   </Box>
                 </TabPanel>
                 <TabPanel>
-                  <Timeline activeTwitter={'#bunkerhud_map'} text={text} />
+                  <h1></h1>
+
+                  <br />
+                  <br />
+                  <h1></h1>
+
+                  <ol>
+                    <li>
+                      <Link
+                        href="https://gist.github.com/basiclaser/ddd10e0273a348da05089a6c286a4ae4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Russian Oligarch Planes in JSON & CSV
+                        <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://docs.google.com/spreadsheets/d/1mNhuhJBmJONAJEtZv3iiYXh4BdC250Ky26U7wIEe-pM/edit#gid=0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Russian Oligarch Planes in google sheet
+                        <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://nuclearadvice.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        nuclearadvice.org
+                        <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="understandingwar.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        understandingwar.org
+                        <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://www.reddit.com/r/volunteersForUkraine"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        volunteersForUkraine on Reddit - people discuss joining
+                        the UA military
+                        <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </li>
+                  </ol>
                 </TabPanel>
                 <TabPanel m={4}>
                   <Text>
                     <ol>
-                      <li>
-                        <Link
-                          href="https://nuclearadvice.org/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          https://nuclearadvice.org/
-                          <ExternalLinkIcon mx="2px" />
-                        </Link>
-                      </li>
                       <li>
                         <Link
                           href="https://www.reddit.com/live/18hnzysb1elcs"

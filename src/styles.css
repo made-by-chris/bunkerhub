@@ -3,6 +3,9 @@
   padding: 0;
   height: 39.5vh;
 }
+.map-button {
+  z-index: 99999999;
+}
 .leaflet-tile {
   filter: brightness(90%) invert(100%) grayscale(90%) !important;
 }
