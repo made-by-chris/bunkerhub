@@ -14,6 +14,9 @@
 }
 span {
   color: black;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 5px;
 }
 .leaflet-tile {
   filter: brightness(90%) invert(100%) grayscale(90%) !important;
