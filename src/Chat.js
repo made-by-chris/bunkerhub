@@ -5,7 +5,7 @@ export default function Chat() {
   useEffect(() => {
     setTimeout(() => {
       setNecessaryClick(true);
-    }, 5000);
+    }, 10000);
   }, []);
   return (
     <>
@@ -13,7 +13,7 @@ export default function Chat() {
         className="overlay"
         style={{
           position: 'absolute',
-          width: '50%',
+          width: '48%',
           height: window.innerHeight / 2 - 85,
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           display: necessaryClick ? 'none' : 'block',
