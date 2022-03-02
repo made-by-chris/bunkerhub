@@ -6,8 +6,14 @@ import RotatedMarker from './RotatedMarker.js';
 import { useEffect, useState } from 'react';
 import oligarchs from './oligarchs.json';
 import geojson from './geojson.json';
-const b = 30;
-
+const b = 40;
+console.log(
+  'hi there, you can find all oligarch plane info here: https://gist.github.com/basiclaser/ddd10e0273a348da05089a6c286a4ae4'
+);
+console.log(
+  'real time plane locations: https://openskynetwork.github.io/opensky-api/rest.html'
+);
+console.log('all this project code: https://github.com/basiclaser/bunkerhub');
 const reverseIndex = {};
 Object.keys(oligarchs).forEach(oligarch => {
   const oli = Object.keys(oligarchs[oligarch])[0];
@@ -17,7 +23,6 @@ Object.keys(oligarchs).forEach(oligarch => {
 });
 
 const Switch = ({ info, field, setInfo }) => {
-  console.log(info);
   return (
     <label className="switch">
       <input
