@@ -11,6 +11,6 @@ export default function Chat() {
     allowtransparency="true"
     frameBorder="0"
     // allow="microphone; camera; display-capture; fullscreen"
-    src={`https://kiwiirc.com/client/kiwiirc.hybridirc.com/?nick=ambassador-?&style="border:0; width:100%; height:450px;&theme=cli#bunker`} />
+    src={`https://kiwiirc.com/client/kiwiirc.hybridirc.com/?nick=ambassador-?&style="border:0; width:100%; height:450px;&theme=cli#bunkerhub`} />
   );
 }
