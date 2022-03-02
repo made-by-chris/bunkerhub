@@ -10,6 +10,7 @@ export default function Chat() {
     height={window.innerHeight / 2 - 85}
     allowtransparency="true"
     frameBorder="0"
-    src={`https://kiwiirc.com/client/thelounge.hybridirc.com/?nick=ambassador-?&style="border:0; width:100%; height:450px;&theme=cli#bunker`} />
+    // allow="microphone; camera; display-capture; fullscreen"
+    src={`https://kiwiirc.com/client/kiwiirc.hybridirc.com/?nick=ambassador-?&style="border:0; width:100%; height:450px;&theme=cli#bunker`} />
   );
 }
