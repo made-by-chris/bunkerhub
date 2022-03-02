@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Chat() {
   const [necessaryClick, setNecessaryClick] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setNecessaryClick(true);
+    }, 5000);
+  }, []);
   return (
     <>
       <div
@@ -13,10 +18,7 @@ export default function Chat() {
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           display: necessaryClick ? 'none' : 'block',
         }}
-        onClick={() => setNecessaryClick(true)}
-      >
-        <button>Click to open chat</button>
-      </div>
+      ></div>
       <iframe
         id="ircChat"
         title="Chat"
