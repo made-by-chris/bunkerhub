@@ -47,7 +47,17 @@ export default () => {
     FR: false,
     DE: false,
   });
-
+  const [counts, setCounts] = useState({
+    all: 0,
+    oligarchs: 0,
+    UA: 0,
+    RU: 0,
+    US: 0,
+    GB: 0,
+    FR: 0,
+    DE: 0,
+  });
+  
   const getVectors = () => {
     fetch(
       `https://opensky-network.org/api/states/all?lamin=${
@@ -55,9 +65,24 @@ export default () => {
       }&lomin=${30.523333 - b}&lamax=${50.450001 + b}&lomax=${30.523333 + b}`
     )
       .then(res => res.json())
-      .then(res => setVectors(res.states));
+      .then(res => {
+        setVectors(res.states)
+        setCounts({
+          all: res.states.length,
+          oligarchs: res.states.filter(v => reverseIndex[v[1].trim()]).length,
+          UA: res.states.filter(v => v[2] === 'Ukraine').length,
+          RU: res.states.filter(v => v[2] === 'Russian Federation').length,
+          US: res.states.filter(v => v[2] === 'United States').length,
+          GB: res.states.filter(v => v[2] === 'United Kingdom').length,
+          FR: res.states.filter(v => v[2] === 'France').length,
+          DE: res.states.filter(v => v[2] === 'Germany').length,
+        })
+      })
   };
 
+  useEffect(()=>{
+    console.log(counts)
+  },[counts])
   useEffect(() => {
     const vectorInterval = setInterval(() => {
       getVectors();
@@ -103,21 +128,21 @@ export default () => {
   return (
     <>
       <nav className="map-buttons">
-        <span>oligarchs</span>
+        <span>oligarchs ({counts.oligarchs})</span> 
         <Switch info={info} field={'oligarchs'} setInfo={setInfo} />
-        <span>UA</span>
+        <span>UA ({counts.UA})</span> 
         <Switch info={info} field={'UA'} setInfo={setInfo} />
-        <span>RU</span>
+        <span>RU ({counts.RU})</span> 
         <Switch info={info} field={'RU'} setInfo={setInfo} />
-        <span>US</span>
+        <span>US ({counts.US})</span> 
         <Switch info={info} field={'US'} setInfo={setInfo} />
-        <span>GB</span>
+        <span>GB ({counts.GB})</span> 
         <Switch info={info} field={'GB'} setInfo={setInfo} />
-        <span>FR</span>
+        <span>FR ({counts.FR})</span> 
         <Switch info={info} field={'FR'} setInfo={setInfo} />
-        <span>DE</span>
+        <span>DE ({counts.DE})</span> 
         <Switch info={info} field={'DE'} setInfo={setInfo} />
-        <span>all</span>
+        <span>all ({counts.all})</span>
         <Switch info={info} field={'all'} setInfo={setInfo} />
       </nav>
       <MapContainer center={[48.450001, 31.523333]} zoom={5}>
